@@ -1,0 +1,137 @@
+.game-canvas {
+  width: 100%;
+  height: 100vw;
+  max-width: 500px;
+  max-height:500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.keys {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 200px;
+  margin: auto;
+}
+
+.up {
+  position: relative;
+  top: -4px;
+}
+
+.chevron::before {
+  border-style: solid;
+  border-width: 8px 8px 0 0;
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  top: -10px;
+  position: relative;
+  transform: rotate(-45deg);
+}
+
+.chevron.down::before {
+  transform: rotate(135deg);
+  top: -22px;
+}
+
+.chevron.right::before {
+  transform: rotate(45deg);
+  top: -18px;
+  left: -5px;
+}
+
+.chevron.left::before {
+  transform: rotate(225deg);
+  top: -18px;
+  left: 5px;
+}
+
+.arr {
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  line-height: 100px;
+  background: gray;
+  color: white;
+  font-size: 50px;
+  border-right: 10px solid #ccc;
+  border-bottom: 10px solid #ccc;
+  border-left: 10px solid #ddd;
+  border-top: 10px solid #eee;
+  display: inline-block;
+  margin: 5px;
+  transition: all .05s linear;
+  user-select: none;
+}
+
+.arr:active {
+  background: #555;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(220, 220, 220, 0.6);
+}
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 зураг зэрэг */
+  gap: 15px; /* Зураг хооронд зай */
+  margin-top: 20px;
+}
+
+.images img {
+  width: 100%;      /* Grid багана дүүрэн */
+  height: auto;     /* Зураг distortion үүсэхгүй */
+  border-radius: 15px;
+  transition: transform 0.3s; /* Hover эффектэд */
+}
+
+.images img:hover {
+  transform: scale(1.1); /* Hover-д 10% томорно */
+}
+.images img {
+  width: 100%;    /* Grid багана дүүрэн */
+  max-height: 300px; /* Хэт өндөр бол хязгаарлах */
+  object-fit: cover;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Хэвтээ гол */
+  align-items: center;     /* Босоо гол */
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+}
+.box {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  padding: 30px 25px;
+  border-radius: 25px;
+  text-align: center;   /* Текст, товч голдоно */
+  width: 80%;
+  max-width: 350px;
+}
+.box h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.box {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  padding: 40px 30px;     /* дотор зай томорсон */
+  border-radius: 30px;
+  text-align: center;
+
+  width: 90%;             /* 📱 утсанд */
+  max-width: 420px;       /* 🖥️ desktop дээр том */
+}

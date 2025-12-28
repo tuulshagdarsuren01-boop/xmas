@@ -1,0 +1,102 @@
+20:24
+Сіз жібердіңіз
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Merry Christmas 🎄</title>
+  <style>
+  body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  background-image: url("bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+    .box {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 60px;
+      border-radius: 50px;
+      width: 90%;
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 26px;
+    }
+
+    button {text-align: center;
+
+      padding: 30px 30px;
+      font-size: 40px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background: #ff4d4d;
+      color: white;
+      margin-top: 55px;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .images img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1 -->
+  <div class="box" id="page1">
+    <h1>🎄 Merry Christmas 🎄</h1>
+    <button onclick="showImages()">Дараарай 🎁</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="box" id="page2" style="display:none;">
+    <h1>🎅 Christmas Memories 🎅</h1>
+    <div class="images">
+      <img src="img1.png">
+      <img src="img2.png">
+      <img src="img3.png">
+      <img src="img4.png">
+      <img src="img5.png">
+      <img src="img6.png">
+    </div>
+    <button onclick="playSong()">Next ▶️</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="box" id="page3" style="display:none;">
+    <h1>🎶 Merry Christmas 🎶</h1>
+    <p>Дуу тоглож байна 💖</p>
+    <audio id="music" src="video.mp4"></audio>
+  </div>
+  
+
+  <script>
+    function showImages() {
+      document.getElementById("page1").style.display = "none";
+      document.getElementById("page2").style.display = "block";
+    }
+
+    function playSong() {
+      document.getElementById("page2").style.display = "none";
+      document.getElementById("page3").style.display = "block";
+      document.getElementById("music").play();
+    }
+  </script>
+</html>
